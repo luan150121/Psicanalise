@@ -48,6 +48,11 @@ a {
     font-family: inherit;
 }
 
+.container {
+    width: min(1120px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
 .cabecalho {
     width: 100%;
     padding: 20px 0;
@@ -107,4 +112,204 @@ a {
 section {
     min-height: 100vh;
     padding: 120px 0;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 81px);
+    padding: 96px 0;
+    overflow: hidden;
+    background-color: var(--cor-fundo-principal);
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero::before {
+    top: -210px;
+    right: -130px;
+    width: 510px;
+    height: 510px;
+    background-color: rgba(127, 146, 120, 0.13);
+}
+
+.hero::after {
+    bottom: -220px;
+    left: -150px;
+    width: 430px;
+    height: 430px;
+    border: 80px solid rgba(238, 230, 216, 0.72);
+}
+
+.hero-conteudo {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    align-items: center;
+    gap: clamp(56px, 8vw, 112px);
+}
+
+.hero-texto {
+    max-width: 650px;
+}
+
+.hero-introducao {
+    margin-bottom: 18px;
+    color: var(--cor-destaque-escuro);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 620px;
+    font-family: var(--fonte-titulo);
+    font-size: clamp(48px, 5.3vw, 76px);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+}
+
+.hero-descricao {
+    max-width: 590px;
+    margin-top: 28px;
+    color: var(--cor-texto-secundario);
+    font-size: 17px;
+}
+
+.hero-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 36px;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.botao-principal {
+    background-color: var(--cor-destaque-escuro);
+    color: var(--cor-branca);
+}
+
+.botao-principal:hover {
+    background-color: var(--cor-destaque);
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    border-color: var(--cor-destaque);
+    color: var(--cor-destaque-escuro);
+}
+
+.botao-secundario:hover {
+    background-color: var(--cor-fundo-secundario);
+    transform: translateY(-2px);
+}
+
+.botao:focus-visible {
+    outline: 3px solid rgba(95, 112, 90, 0.35);
+    outline-offset: 4px;
+}
+
+.hero-foto {
+    position: relative;
+    display: grid;
+    width: min(100%, 430px);
+    aspect-ratio: 4 / 5;
+    place-items: center;
+    justify-self: end;
+    overflow: hidden;
+    border: 1px solid rgba(95, 112, 90, 0.18);
+    border-radius: 48% 48% 18px 18px;
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-secundario);
+}
+
+.hero-foto::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px dashed rgba(95, 112, 90, 0.3);
+    border-radius: inherit;
+}
+
+.hero-foto span {
+    position: relative;
+    padding: 16px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero-conteudo {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .hero-texto {
+        max-width: 720px;
+    }
+
+    .hero-foto {
+        width: min(100%, 520px);
+        justify-self: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .container {
+        width: min(100% - 32px, 1120px);
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 72px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 13vw, 56px);
+    }
+
+    .hero-descricao {
+        font-size: 16px;
+    }
+
+    .hero-acoes {
+        flex-direction: column;
+    }
+
+    .botao {
+        width: 100%;
+    }
+
+    .hero-foto {
+        border-radius: 42% 42% 14px 14px;
+    }
 }
