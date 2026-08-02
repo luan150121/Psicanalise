@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="js/script.js" defer></script>
     
 </head>
 <body>
@@ -19,7 +20,19 @@
                 Psicanálise
             </a>
 
-            <nav class="menu">
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu de navegação"
+                aria-expanded="false"
+                aria-controls="menu-principal"
+            >
+                <span class="menu-toggle-linha" aria-hidden="true"></span>
+                <span class="menu-toggle-linha" aria-hidden="true"></span>
+                <span class="menu-toggle-linha" aria-hidden="true"></span>
+            </button>
+
+            <nav class="menu" id="menu-principal" aria-label="Navegação principal">
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#psicanalise">Psicanálise</a>
@@ -42,14 +55,13 @@
                     </p>
 
                     <div class="hero-acoes">
-                        <!-- Substitua o número abaixo pelo WhatsApp profissional. -->
                         <a
                             class="botao botao-principal"
-                            href="https://wa.me/5500000000000"
+                            href="https://wa.me/5511952828364"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Entrar em contato pelo WhatsApp (abre em uma nova aba)"
-                        >
+                            aria-label="Entrar em contato pelo WhatsApp (abre em uma nova aba)">
+
                             Falar pelo WhatsApp
                         </a>
                         <a class="botao botao-secundario" href="#sobre">Conheça meu trabalho</a>
@@ -66,24 +78,50 @@
             </div>
         </section>
 
-        <section id="sobre">
-            <h2>Sobre</h2>
+        <section class="secao-padrao decoracao-editorial decoracao-editorial--sobre" id="sobre">
+            <div class="container">
+                <div class="secao-card">
+                    <h2>Sobre</h2>
+                </div>
+            </div>
         </section>
 
-        <section id="psicanalise">
-            <h2>O que é psicanálise</h2>
+        <section
+            class="secao-padrao decoracao-editorial decoracao-editorial--psicanalise"
+            id="psicanalise"
+        >
+            <div class="container">
+                <div class="secao-card">
+                    <h2>O que é psicanálise</h2>
+                </div>
+            </div>
         </section>
 
-        <section id="ajuda">
-            <h2>Como a psicanálise pode ajudar</h2>
+        <section class="secao-padrao decoracao-editorial decoracao-editorial--ajuda" id="ajuda">
+            <div class="container">
+                <div class="secao-card">
+                    <h2>Como a psicanálise pode ajudar</h2>
+                </div>
+            </div>
         </section>
 
-        <section id="atendimento">
-            <h2>Como funciona o atendimento</h2>
+        <section
+            class="secao-padrao decoracao-editorial decoracao-editorial--atendimento"
+            id="atendimento"
+        >
+            <div class="container">
+                <div class="secao-card">
+                    <h2>Como funciona o atendimento</h2>
+                </div>
+            </div>
         </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
+        <section class="secao-padrao decoracao-editorial decoracao-editorial--contato" id="contato">
+            <div class="container">
+                <div class="secao-card">
+                    <h2>Contato</h2>
+                </div>
+            </div>
         </section>
     </main>
 </body>
