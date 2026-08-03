@@ -13,6 +13,19 @@
 
     --cor-branca: #ffffff;
 
+    --hero-visual-proporcao: 4 / 5;
+    --hero-visual-largura: 520px;
+    --hero-visual-largura-desktop: 430px;
+
+    --sobre-foto-proporcao: 4 / 5;
+    --sobre-foto-largura: 380px;
+    --sobre-raio-detalhe: 18px;
+    --sobre-raio-foto: 46% 46% 20px 20px;
+
+    --contato-card-altura: 252px;
+    --contato-card-raio: 22px;
+    --contato-icone-tamanho: 52px;
+
     --fonte-titulo: "Cormorant Garamond", serif;
     --fonte-texto: "Inter", sans-serif;
 
@@ -336,35 +349,12 @@ main {
     outline-offset: 4px;
 }
 
-.hero-foto {
+.hero-visual {
     position: relative;
-    display: grid;
-    width: min(100%, 520px);
-    aspect-ratio: 4 / 5;
-    place-items: center;
+    width: min(100%, var(--hero-visual-largura));
+    aspect-ratio: var(--hero-visual-proporcao);
     justify-self: center;
-    overflow: hidden;
-    border: 1px solid rgba(95, 112, 90, 0.18);
-    border-radius: 42% 42% 14px 14px;
-    background-color: var(--cor-fundo-secundario);
-    color: var(--cor-texto-secundario);
-}
-
-.hero-foto::before {
-    content: "";
-    position: absolute;
-    inset: 22px;
-    border: 1px dashed rgba(95, 112, 90, 0.3);
-    border-radius: inherit;
-}
-
-.hero-foto span {
-    position: relative;
-    padding: 16px;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-align: center;
-    text-transform: uppercase;
+    isolation: isolate;
 }
 
 .secao-padrao {
@@ -409,6 +399,249 @@ main {
     color: var(--cor-texto-principal);
 }
 
+/* ==========================================================
+   SOBRE: CONTEÚDO E LAYOUT
+   As formas decorativas desta seção ficam no bloco editorial.
+   ========================================================== */
+
+.sobre-card {
+    display: block;
+    min-width: 0;
+}
+
+.sobre-cabecalho,
+.sobre-layout,
+.sobre-conteudo {
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-cabecalho {
+    margin-bottom: 32px;
+}
+
+.sobre-etiqueta,
+.sobre-aviso {
+    color: var(--cor-destaque-escuro);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.sobre-etiqueta {
+    margin-bottom: 8px;
+}
+
+.sobre-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    min-width: 0;
+}
+
+.sobre-foto-moldura {
+    position: relative;
+    width: min(100%, var(--sobre-foto-largura));
+    aspect-ratio: var(--sobre-foto-proporcao);
+    justify-self: center;
+    overflow: hidden;
+    background-color: var(--cor-fundo-secundario);
+}
+
+.sobre-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sobre-foto-moldura figcaption {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 9px 12px;
+    background-color: rgba(248, 246, 241, 0.9);
+    color: var(--cor-texto-secundario);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sobre-conteudo {
+    min-width: 0;
+}
+
+.sobre-aviso {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    border: 1px solid rgba(95, 112, 90, 0.22);
+    border-radius: 999px;
+    background-color: var(--cor-fundo-suave);
+}
+
+.sobre-apresentacao {
+    max-width: 680px;
+    color: var(--cor-texto-secundario);
+    font-size: 16px;
+}
+
+.sobre-detalhes {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.sobre-detalhe {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid rgba(95, 112, 90, 0.14);
+    border-radius: var(--sobre-raio-detalhe);
+    background-color: rgba(248, 246, 241, 0.7);
+    overflow-wrap: anywhere;
+}
+
+.sobre-detalhe h3 {
+    margin-bottom: 8px;
+    font-family: var(--fonte-titulo);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.sobre-detalhe p {
+    color: var(--cor-texto-secundario);
+    font-size: 14px;
+}
+
+.sobre-contato {
+    margin-top: 28px;
+}
+
+/* ==========================================================
+   CONTATO: CONTEÚDO E LAYOUT
+   Os destinos dos links ficam centralizados em js/script.js.
+   ========================================================== */
+
+.contato-painel {
+    display: block;
+    min-width: 0;
+}
+
+.contato-cabecalho,
+.contato-grade {
+    position: relative;
+    z-index: 1;
+}
+
+.contato-cabecalho {
+    max-width: 680px;
+    margin-bottom: 32px;
+}
+
+.contato-cabecalho p {
+    margin-top: 14px;
+    color: var(--cor-texto-secundario);
+    font-size: 16px;
+}
+
+.contato-grade {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+}
+
+.contato-card {
+    display: flex;
+    width: 100%;
+    height: var(--contato-card-altura);
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(95, 112, 90, 0.16);
+    border-radius: var(--contato-card-raio);
+    background-color: rgba(248, 246, 241, 0.88);
+    box-shadow: 0 12px 30px rgba(53, 51, 47, 0.05);
+    transition: transform 0.25s ease, border-color 0.25s ease,
+        background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contato-card:hover {
+    border-color: rgba(95, 112, 90, 0.34);
+    background-color: var(--cor-branca);
+    box-shadow: 0 18px 38px rgba(53, 51, 47, 0.09);
+    transform: translateY(-5px);
+}
+
+.contato-card:focus-visible {
+    outline: 3px solid rgba(95, 112, 90, 0.35);
+    outline-offset: 4px;
+}
+
+.contato-icone {
+    display: grid;
+    width: var(--contato-icone-tamanho);
+    height: var(--contato-icone-tamanho);
+    flex: 0 0 auto;
+    place-items: center;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-destaque-escuro);
+}
+
+.contato-icone svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
+.contato-card[data-contato="whatsapp"] .contato-icone svg {
+    fill: currentColor;
+    stroke: none;
+}
+
+.contato-card h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.contato-card p {
+    margin-top: 8px;
+    color: var(--cor-texto-secundario);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.contato-acao {
+    margin-top: auto;
+    color: var(--cor-destaque-escuro);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.contato-acao::after {
+    content: " →";
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.contato-card:hover .contato-acao::after {
+    transform: translateX(4px);
+}
+
 @media (min-width: 768px) {
     .container {
         width: min(100% - 48px, 1120px);
@@ -446,8 +679,8 @@ main {
         width: auto;
     }
 
-    .hero-foto {
-        border-radius: 48% 48% 18px 18px;
+    .hero-visual {
+        width: min(100%, 480px);
     }
 
     .secao-padrao {
@@ -462,6 +695,23 @@ main {
 
     .secao-card h2 {
         font-size: 52px;
+    }
+
+    .sobre-cabecalho {
+        margin-bottom: 40px;
+    }
+
+    .sobre-detalhes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contato-cabecalho {
+        margin-bottom: 40px;
+    }
+
+    .contato-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 }
 
@@ -526,8 +776,8 @@ main {
         font-size: clamp(60px, 5.3vw, 76px);
     }
 
-    .hero-foto {
-        width: min(100%, 430px);
+    .hero-visual {
+        width: min(100%, var(--hero-visual-largura-desktop));
         justify-self: end;
     }
 
@@ -544,6 +794,20 @@ main {
 
     .secao-card h2 {
         font-size: 58px;
+    }
+
+    .sobre-layout {
+        grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+        align-items: center;
+        gap: clamp(48px, 7vw, 88px);
+    }
+
+    .sobre-foto-moldura {
+        justify-self: start;
+    }
+
+    .contato-grade {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
@@ -579,6 +843,146 @@ main {
     height: var(--decoracao-hero-bege);
     border: var(--decoracao-hero-borda) solid
         rgb(var(--decoracao-bege) / var(--decoracao-opacidade-hero-bege));
+}
+
+/* Hero: composição leve e autônoma que substitui a antiga área de foto. */
+.hero-visual::before,
+.hero-visual::after,
+.hero-visual-painel::before,
+.hero-visual-painel::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero-visual::before {
+    z-index: -2;
+    top: 2%;
+    right: 0;
+    width: 76%;
+    aspect-ratio: 1;
+    border-radius: 58% 42% 46% 54% / 44% 58% 42% 56%;
+    background-color: rgb(var(--decoracao-verde) / 0.16);
+    transform: rotate(8deg);
+}
+
+.hero-visual::after {
+    z-index: -1;
+    bottom: 3%;
+    left: 0;
+    width: 68%;
+    aspect-ratio: 1;
+    border: clamp(34px, 8vw, 58px) solid
+        rgb(var(--decoracao-bege) / 0.78);
+    border-radius: 50%;
+}
+
+.hero-visual-painel {
+    position: absolute;
+    z-index: 1;
+    top: 19%;
+    left: 7%;
+    width: 76%;
+    padding: clamp(24px, 7vw, 38px);
+    overflow: hidden;
+    border: 1px solid rgb(var(--decoracao-verde) / 0.16);
+    border-radius: 42% 58% 22px 22px / 34% 42% 22px 22px;
+    background-color: rgb(var(--decoracao-branco) / 0.82);
+    box-shadow: 0 20px 48px rgb(var(--decoracao-sombra) / 0.08);
+}
+
+.hero-visual-painel::before {
+    top: -32px;
+    right: -24px;
+    width: 112px;
+    height: 86px;
+    border-radius: 48% 52% 62% 38%;
+    background-color: rgb(var(--decoracao-bege) / 0.76);
+    transform: rotate(12deg);
+}
+
+.hero-visual-painel::after {
+    right: 18px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgb(var(--decoracao-verde) / 0.24);
+    border-radius: 48% 52% 42% 58%;
+}
+
+.hero-visual-frase {
+    position: relative;
+    z-index: 1;
+    max-width: 260px;
+    font-family: var(--fonte-titulo);
+    font-size: clamp(28px, 8.5vw, 40px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.hero-visual-frase span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--cor-destaque-escuro);
+    font-family: var(--fonte-texto);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero-visual-conceitos {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 9%;
+    display: grid;
+    width: 72%;
+    gap: 9px;
+    list-style: none;
+}
+
+.hero-visual-conceitos li {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 1px solid rgb(var(--decoracao-verde) / 0.16);
+    border-radius: 999px;
+    background-color: rgb(var(--decoracao-branco) / 0.9);
+    box-shadow: 0 10px 24px rgb(var(--decoracao-sombra) / 0.07);
+    color: var(--cor-texto-secundario);
+    font-size: clamp(10px, 3vw, 12px);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-visual-conceitos li:nth-child(1) {
+    transform: translateX(-24px);
+}
+
+.hero-visual-conceitos li:nth-child(2) {
+    transform: translateX(-4px);
+}
+
+.hero-visual-conceitos li:nth-child(3) {
+    transform: translateX(-14px);
+}
+
+.hero-visual-conceitos li span {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background-color: var(--cor-destaque);
+}
+
+.hero-visual-conceitos li:nth-child(2) span {
+    background-color: var(--cor-fundo-secundario);
+    box-shadow: inset 0 0 0 1px rgba(95, 112, 90, 0.22);
 }
 
 /* Base: mancha bege e anel sálvia atravessam os limites das seções. */
@@ -618,6 +1022,31 @@ main {
     left: -90px;
     width: var(--decoracao-tamanho-anel);
     height: var(--decoracao-tamanho-anel);
+}
+
+/* A moldura da foto mantém sua forma mesmo sem a imagem interna. */
+.decoracao-editorial--sobre .sobre-foto-moldura {
+    border: 1px solid rgb(var(--decoracao-verde) / 0.2);
+    border-radius: var(--sobre-raio-foto);
+    box-shadow: 0 18px 45px rgb(var(--decoracao-sombra) / 0.08);
+}
+
+.decoracao-editorial--sobre .sobre-foto-moldura::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 18px;
+    right: 18px;
+    width: 58px;
+    height: 58px;
+    border: 1px solid rgb(var(--decoracao-verde) / 0.28);
+    border-radius: 48% 52% 42% 58%;
+    pointer-events: none;
+}
+
+.decoracao-editorial--sobre .sobre-foto-moldura figcaption {
+    z-index: 2;
+    border-radius: 999px;
 }
 
 /* Psicanálise: forma horizontal à esquerda e anel assimétrico à direita. */
@@ -748,12 +1177,15 @@ main {
     .menu,
     .menu-toggle-linha,
     .menu a::after,
-    .botao {
+    .botao,
+    .contato-card,
+    .contato-acao::after {
         transition: none;
     }
 
     .botao-principal:hover,
-    .botao-secundario:hover {
+    .botao-secundario:hover,
+    .contato-card:hover {
         transform: none;
     }
 }

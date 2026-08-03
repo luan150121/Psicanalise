@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Placeholder para foto profissional</title>
+  <desc id="descricao">Ilustração abstrata em bege e verde sálvia para ser substituída por uma fotografia.</desc>
+  <rect width="800" height="1000" fill="#eee6d8"/>
+  <path d="M-90 730C75 554 203 573 338 672c139 102 273 94 498-43v371H-90Z" fill="#7f9278" opacity=".34"/>
+  <path d="M576-70c152 83 211 203 175 355-29 126-113 205-253 239-80 19-151 2-213-51C191 392 170 280 224 138 278-4 395-74 576-70Z" fill="#f8f6f1" opacity=".78"/>
+  <circle cx="402" cy="360" r="118" fill="none" stroke="#5f705a" stroke-opacity=".32" stroke-width="3"/>
+  <path d="M201 718c34-137 112-205 235-205 121 0 202 68 243 205" fill="none" stroke="#5f705a" stroke-opacity=".32" stroke-width="3"/>
+  <text x="400" y="825" fill="#5f705a" font-family="Arial, sans-serif" font-size="25" letter-spacing="4" text-anchor="middle">FOTO PROFISSIONAL</text>
+  <text x="400" y="865" fill="#68645d" font-family="Arial, sans-serif" font-size="19" letter-spacing="2" text-anchor="middle">PLACEHOLDER LOCAL</text>
+</svg>

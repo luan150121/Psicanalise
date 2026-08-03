@@ -1,3 +1,18 @@
+/* Altere os três canais de contato somente neste bloco. */
+const contatos = {
+    whatsapp: "https://wa.me/5511952828364",
+    instagram: "https://www.instagram.com/SEU_USUARIO/",
+    email: "mailto:SEU_EMAIL@EXEMPLO.COM",
+};
+
+document.querySelectorAll("[data-contato]").forEach((link) => {
+    const canal = link.dataset.contato;
+
+    if (contatos[canal]) {
+        link.href = contatos[canal];
+    }
+});
+
 const cabecalho = document.querySelector(".cabecalho");
 
 if (cabecalho) {
