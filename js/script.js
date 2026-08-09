@@ -1,8 +1,8 @@
 /* Altere os três canais de contato somente neste bloco. */
 const contatos = {
     whatsapp: "https://wa.me/5511952828364",
-    instagram: "https://www.instagram.com/SEU_USUARIO/",
-    email: "mailto:SEU_EMAIL@EXEMPLO.COM",
+    instagram: "https://www.instagram.com/psicanalista_adrianaanjos/",
+    email: "mailto:adriana.anjos76@gmail.com",
 };
 
 document.querySelectorAll("[data-contato]").forEach((link) => {
