@@ -2,7 +2,7 @@
 const contatos = {
     whatsapp: "https://wa.me/5511952828364",
     instagram: "https://www.instagram.com/psicanalista_adrianaanjos/",
-    email: "mailto:adriana.anjos76@gmail.com",
+    email: "mailto:adriana.anjos@falareescutar.com.br",
 };
 
 document.querySelectorAll("[data-contato]").forEach((link) => {
