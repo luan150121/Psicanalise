@@ -351,6 +351,9 @@ main {
 
 .hero-visual {
     position: relative;
+    display: grid;
+    align-content: center;
+    gap: 24px;
     width: min(100%, var(--hero-visual-largura));
     aspect-ratio: var(--hero-visual-proporcao);
     justify-self: center;
@@ -498,6 +501,7 @@ main {
 
 .sobre-detalhe {
     min-width: 0;
+    min-height: 0;
     padding: 20px;
     border: 1px solid rgba(95, 112, 90, 0.14);
     border-radius: var(--sobre-raio-detalhe);
@@ -516,6 +520,14 @@ main {
 .sobre-detalhe p {
     color: var(--cor-texto-secundario);
     font-size: 14px;
+}
+
+.sobre-detalhe--atendimento {
+    grid-column: 1 / -1;
+}
+
+.sobre-detalhe--atendimento h3 {
+    overflow-wrap: normal;
 }
 
 .sobre-contato {
@@ -705,10 +717,6 @@ main {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .sobre-detalhe:last-child {
-        grid-column: 1 / -1;
-    }
-
     .contato-cabecalho {
         margin-bottom: 40px;
     }
@@ -882,15 +890,14 @@ main {
 }
 
 .hero-visual-painel {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    top: 19%;
     left: 7%;
     width: 76%;
     padding: clamp(24px, 7vw, 38px);
     overflow: hidden;
     border: 1px solid rgb(var(--decoracao-verde) / 0.16);
-    border-radius: 42% 58% 22px 22px / 34% 42% 22px 22px;
+    border-radius: 32px 54px 22px 22px;
     background-color: rgb(var(--decoracao-branco) / 0.82);
     box-shadow: 0 20px 48px rgb(var(--decoracao-sombra) / 0.08);
 }
@@ -919,9 +926,9 @@ main {
     z-index: 1;
     max-width: 260px;
     font-family: var(--fonte-titulo);
-    font-size: clamp(28px, 8.5vw, 40px);
+    font-size: clamp(24px, 6vw, 32px);
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.15;
     letter-spacing: -0.02em;
 }
 
@@ -937,10 +944,9 @@ main {
 }
 
 .hero-visual-conceitos {
-    position: absolute;
+    position: relative;
     z-index: 2;
-    right: 0;
-    bottom: 9%;
+    justify-self: end;
     display: grid;
     width: 72%;
     gap: 9px;
