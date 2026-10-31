@@ -353,7 +353,7 @@ main {
     position: relative;
     display: grid;
     align-content: center;
-    gap: 24px;
+    gap: 56px;
     width: min(100%, var(--hero-visual-largura));
     aspect-ratio: var(--hero-visual-proporcao);
     justify-self: center;
