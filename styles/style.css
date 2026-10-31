@@ -401,6 +401,22 @@ main {
     color: var(--cor-texto-principal);
 }
 
+.psicanalise-card,
+.ajuda-card {
+    display: block;
+}
+
+.psicanalise-descricao,
+.ajuda-descricao {
+    position: relative;
+    z-index: 1;
+    max-width: 64ch;
+    margin-top: 24px;
+    color: var(--cor-texto-secundario);
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 1.8;
+}
+
 /* ==========================================================
    SOBRE: CONTEÚDO E LAYOUT
    As formas decorativas desta seção ficam no bloco editorial.
