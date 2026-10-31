@@ -974,6 +974,10 @@ main {
     transform: translateX(-24px);
 }
 
+.hero-conceito-texto p + p {
+    margin-top: 6px;
+}
+
 .hero-visual-conceitos li:nth-child(2) {
     transform: translateX(-4px);
 }
