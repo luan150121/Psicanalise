@@ -45,5 +45,6 @@ jobs:
             **/.github/**
             **/.vscode/**
             **/node_modules/**
+            documentos/**
             README.md
             LICENSE
